@@ -1,5 +1,7 @@
 package com.example.javae_commerce.Entities;
 
+import com.example.javae_commerce.utils.constants;
+
 import java.io.IOException;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -72,51 +74,31 @@ public class venda extends produto implements Serializable {
     }
 
     //Método para cadastrar produtos
-    public void cadastroProduto() throws IOException{
-
-        Scanner input = new Scanner(System.in);
-        System.out.println("\n>>>CADASTRO DE PRODUTO<<<");
-
-        System.out.print("NOME: ");
-        setNome(input.nextLine());
-
-        try {
-            System.out.print("CODIGO: ");
-            setIdProduto(Integer.parseInt(input.nextLine()));
+    public String validaProduto(String idProduto, String nmProduto, float preco, int qtdProduto){
+        boolean validate = false;
+        if (idProduto.equals("")){
+            return constants.idInvalido;
         }
-        catch(NumberFormatException e){
-            utils.mensagemErro();
-            setIdProduto(-1);
-            System.in.read();
+
+        if (nmProduto.equals("")){
+            return constants.nomeInvalido;
         }
-        if(getIdProduto() != -1){
-            try {
-                System.out.print("PRECO: ");
-                setPreco(Float.parseFloat(input.next()));
-            }
-            catch(NumberFormatException e){
-                utils.mensagemErro();
-                setIdProduto(-1);
-                System.in.read();
-            }
-            if(getIdProduto() != -1){
-                try {
-                    System.out.print("QUANTIDADE: ");
-                    setQtdProduto(Integer.parseInt(input.next()));
-                }
-                catch (Exception e) {
-                    utils.mensagemErro();
-                    setIdProduto(-1);
-                    System.in.read();
-                }
-            }
+
+        if (preco < 1){
+            return constants.precoInvalido;
         }
+
+        if (qtdProduto < 1){
+            return constants.qtdInvalida;
+        }
+
+        return constants.produtoValidado;
     }
 
     //Metodo para verificar se o produto está cadastrado na base, buscando pelo indice.
-    public int getIndice(ArrayList<venda> produtos, int id){
+    public int getIndice(ArrayList<venda> produtos, String id){
         for(int i = 0; i < produtos.size(); i++){
-            if(produtos.get(i).getIdProduto() == id){
+            if(produtos.get(i).getIdProduto().equals(id)){
                 return i;
             }
         }

@@ -4,7 +4,7 @@ package com.example.javae_commerce.Entities;
 import java.io.Serializable;
 
 public class produto implements Serializable{
-    private int idProduto;
+    private String idProduto;
     private String nome;
     private float preco;
     private int qtdProduto;
@@ -15,7 +15,7 @@ public class produto implements Serializable{
 
     }
 
-    public void setIdProduto(int IDProduto){
+    public void setIdProduto(String IDProduto){
         this.idProduto = IDProduto;
     }
 
@@ -35,7 +35,7 @@ public class produto implements Serializable{
         this.envio = Envio;
     }
 
-    public int getIdProduto(){
+    public String getIdProduto(){
         return this.idProduto;
     }
 

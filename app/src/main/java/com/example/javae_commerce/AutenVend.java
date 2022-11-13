@@ -64,9 +64,6 @@ public class AutenVend extends AppCompatActivity {
     }
 
     private void btnCadVendActivity() {
-
-
-
         startActivity(new Intent(AutenVend.this, CadVend.class));
     }
 
