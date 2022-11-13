@@ -8,7 +8,8 @@ public class constants {
     public static final String erroAoCadastrar = "ERRO AO CADASTRAR";
     public static final String cadastroConcluido = "CADASTRADO COM SUCESSO";
     public static final String cadastroMenu = "CADASTRO";
+    public static final String login = "LOGIN";
     public static final String ok = "OK";
-    public static final int timeout = 3000;
+    public static final int timeout = 2000;
 
 }

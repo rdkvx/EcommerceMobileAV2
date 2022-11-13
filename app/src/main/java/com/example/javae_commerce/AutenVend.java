@@ -4,12 +4,19 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.javae_commerce.Entities.funcionario;
+import com.example.javae_commerce.utils.constants;
+import com.example.javae_commerce.utils.misc;
 
 public class AutenVend extends AppCompatActivity {
 
     private Button btnLoginVend, btnCadVend;
+    private EditText nomeForm;
+    private EditText emailForm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +31,13 @@ public class AutenVend extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                btnLoginVendActivity();
+                nomeForm = findViewById(R.id.formNomeUsuario);
+                String nome = nomeForm.getText().toString();
+
+                emailForm = findViewById(R.id.formEmailUsuario);
+                String email = emailForm.getText().toString();
+
+                btnLoginVendActivity(nome, email);
 
             }
         });
@@ -39,10 +52,15 @@ public class AutenVend extends AppCompatActivity {
         });
     }
 
-    private void btnLoginVendActivity() {
+    private void btnLoginVendActivity(String nome, String email) {
+        funcionario f = new funcionario();
 
-
-        startActivity(new Intent(AutenVend.this, PainelV.class));
+        boolean resp = f.autenticaFuncionario(nome, email);
+        if (!resp){
+            misc.msgAlert(btnLoginVend.getContext(), constants.dadosInvalidos, constants.login);
+        } else {
+            startActivity(new Intent(AutenVend.this, PainelV.class));
+        }
     }
 
     private void btnCadVendActivity() {

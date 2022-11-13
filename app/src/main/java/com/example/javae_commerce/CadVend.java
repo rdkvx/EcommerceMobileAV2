@@ -26,10 +26,7 @@ public class CadVend extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cad_vend);
 
-
-
         btnCadVend = (Button) findViewById(R.id.btnCadVend);
-
 
         btnCadVend.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -41,7 +38,6 @@ public class CadVend extends AppCompatActivity {
                 String email = emailForm.getText().toString();
 
                 btnCadVendActivity(nome, email);
-
             }
         });
     }
@@ -56,8 +52,8 @@ public class CadVend extends AppCompatActivity {
             misc.msgAlert(btnCadVend.getContext(), response, constants.cadastroMenu);
 
         } else {
-            f.setNome(nome);
-            f.setEmail(email);
+            f.setNome(nome.toLowerCase());
+            f.setEmail(email.toLowerCase());
 
             funcionarios.add(f);
 
@@ -70,8 +66,6 @@ public class CadVend extends AppCompatActivity {
                     startActivity(new Intent( CadVend.this, AutenVend.class));
                 }
             }, constants.timeout);
-
-
         }
     }
 }

@@ -1,5 +1,7 @@
 package com.example.javae_commerce.Entities;
 
+import static com.example.javae_commerce.MainActivity.funcionarios;
+
 import com.example.javae_commerce.utils.constants;
 
 import java.util.ArrayList;
@@ -64,5 +66,24 @@ public class funcionario implements pessoa {
            return constants.dadosInvalidos;
         }
       return constants.cadastroValidado;
+    }
+
+    @Override
+    public boolean autenticaFuncionario(String nome, String email){
+        boolean encontrou = false;
+        nome = nome.toLowerCase();
+        email = email.toLowerCase();
+
+        for(int i = 0; i < funcionarios.size(); i++){
+            String arrNome = funcionarios.get(i).getNome().toLowerCase();
+            String arrEmail = funcionarios.get(i).getEmail().toLowerCase();
+
+            if(nome.equals(arrNome) && email.equals(arrEmail)){
+                encontrou = true;
+                break;
+            }
+        }
+
+        return encontrou;
     }
 }
