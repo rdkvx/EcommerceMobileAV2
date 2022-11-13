@@ -1,5 +1,7 @@
 package com.example.javae_commerce.Entities;
 
+import static com.example.javae_commerce.MainActivity.vendas;
+
 import com.example.javae_commerce.utils.constants;
 
 import java.io.IOException;
@@ -93,6 +95,17 @@ public class venda extends produto implements Serializable {
         }
 
         return constants.produtoValidado;
+    }
+
+    public boolean removeProduto(String idProduto){
+        for(int i = 0; i < vendas.size(); i++){
+            if(idProduto.equals(vendas.get(i).getIdProduto())){
+                vendas.remove(i);
+                return true;
+            }
+
+        }
+        return false;
     }
 
     //Metodo para verificar se o produto está cadastrado na base, buscando pelo indice.

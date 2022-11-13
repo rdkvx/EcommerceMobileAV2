@@ -1,6 +1,8 @@
 package com.example.javae_commerce.Entities;
 
 
+import static com.example.javae_commerce.MainActivity.produtos;
+
 import java.io.Serializable;
 
 public class produto implements Serializable{
@@ -69,5 +71,7 @@ public class produto implements Serializable{
     public void trataEnvio(){
 
     }
+
+
 
 }
