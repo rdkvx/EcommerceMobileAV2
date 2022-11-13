@@ -8,6 +8,7 @@ import android.widget.Button;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.javae_commerce.Entities.funcionario;
+import com.example.javae_commerce.Entities.produto;
 import com.example.javae_commerce.Entities.venda;
 
 import java.util.ArrayList;
@@ -16,7 +17,7 @@ public class MainActivity extends AppCompatActivity {
 
     private Button btnComprador, btnVendedor;
 
-    public static final ArrayList<venda> produtos = new ArrayList(); //LISTA QUE PERSISTIRÁ TODOS OS PRODUTOS CADASTRADOS.
+    public static final ArrayList<produto> produtos = new ArrayList(); //LISTA QUE PERSISTIRÁ TODOS OS PRODUTOS CADASTRADOS.
     public static final ArrayList<venda> vendas = new ArrayList(); //LISTA QUE PERSISTIRÁ TODAS AS COMPRAS E VENDAS CADASTRADAS.
     public static final ArrayList<funcionario> funcionarios = new ArrayList(); //LISTA QUE PERSISTIRÁ TODOS OS FUNCIONARIOS.
 

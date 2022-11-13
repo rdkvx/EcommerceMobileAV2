@@ -1,16 +1,16 @@
 package com.example.javae_commerce;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 public class Produtos extends AppCompatActivity {
 
 
-    private Button btnMenuNovoProduto, btnMenuRemoveProduto, btnMenuPdtsEnvioPendente;
+    private Button btnMenuNovoProduto, btnMenuRemoveProduto, btnMenuPdtsEnvioPendente, btnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +21,7 @@ public class Produtos extends AppCompatActivity {
         btnMenuNovoProduto = (Button) findViewById(R.id.btnMenuNovoProduto);
         btnMenuRemoveProduto = (Button) findViewById(R.id.btnMenuRemoveProduto);
         btnMenuPdtsEnvioPendente = (Button) findViewById(R.id.btnMenuPdtsEnvioPendente);
+        btnHome = (Button) findViewById(R.id.btnHome);
 
 
         btnMenuNovoProduto.setOnClickListener(new View.OnClickListener() {
@@ -47,6 +48,13 @@ public class Produtos extends AppCompatActivity {
             }
         });
 
+        btnHome.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                btnHomeActivity();
+            }
+        });
+
     }
 
     private void btnMenuNovoProdutoActivity() {
@@ -62,5 +70,10 @@ public class Produtos extends AppCompatActivity {
     private void btnMenuPdtsEnvioPendenteActivity() {
 
         startActivity(new Intent(Produtos.this, Envios.class));
+    }
+
+    private void btnHomeActivity() {
+
+        startActivity(new Intent(Produtos.this, MainActivity.class));
     }
 }

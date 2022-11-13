@@ -10,11 +10,14 @@
         android:id="@+id/btnMenuNovoProduto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
         android:layout_marginBottom="18dp"
         android:text="Novo produto"
         app:layout_constraintBottom_toTopOf="@+id/btnMenuRemoveProduto"
-        app:layout_constraintStart_toStartOf="@+id/btnMenuRemoveProduto" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnHome"
+        app:layout_constraintVertical_bias="0.981" />
 
     <Button
         android:id="@+id/btnMenuRemoveProduto"
@@ -49,5 +52,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnHome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="INICIO"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

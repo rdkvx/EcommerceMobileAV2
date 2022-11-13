@@ -9,7 +9,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.javae_commerce.Entities.venda;
+import com.example.javae_commerce.Entities.produto;
 import com.example.javae_commerce.utils.constants;
 import com.example.javae_commerce.utils.misc;
 
@@ -37,12 +37,12 @@ public class RemovProd extends AppCompatActivity {
     }
 
     private void btnRemoveProdutoActivity(String idProduto){
-        venda v = new venda();
+        produto p = new produto();
 
-        boolean response = v.removeProduto(idProduto);
+        boolean response = p.removeProduto(idProduto);
 
         if(!response){
-            misc.msgAlert(btnRemoveProduto.getContext(), constants.erroAoRemoverProduto, constants.produtoMenu);
+            misc.msgAlert(btnRemoveProduto.getContext(), constants.produtoNaoEncontrado, constants.produtoMenu);
         }else{
             misc.msgAlert(btnRemoveProduto.getContext(), constants.produtoRemovido, constants.produtoMenu);
 

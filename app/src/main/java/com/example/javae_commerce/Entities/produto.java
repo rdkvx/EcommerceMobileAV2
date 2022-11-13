@@ -3,6 +3,8 @@ package com.example.javae_commerce.Entities;
 
 import static com.example.javae_commerce.MainActivity.produtos;
 
+import com.example.javae_commerce.utils.constants;
+
 import java.io.Serializable;
 
 public class produto implements Serializable{
@@ -10,7 +12,6 @@ public class produto implements Serializable{
     private String nome;
     private float preco;
     private int qtdProduto;
-    private boolean envio = false;
 
     //Construtor padrão
     public void produto(){
@@ -33,9 +34,6 @@ public class produto implements Serializable{
         this.qtdProduto = QtdProduto;
     }
 
-    public void setEnvio(boolean Envio){
-        this.envio = Envio;
-    }
 
     public String getIdProduto(){
         return this.idProduto;
@@ -53,13 +51,67 @@ public class produto implements Serializable{
         return this.qtdProduto;
     }
 
-    public boolean getEnvio(){
-        return this.envio;
+
+    public boolean removeProduto(String idProduto){
+        for(int i = 0; i < produtos.size(); i++){
+            if(idProduto.equals(produtos.get(i).getIdProduto())){
+                produtos.remove(i);
+                return true;
+            }
+
+        }
+        return false;
+    }
+
+    //Método para cadastrar produtos
+    public String validaProduto(String idProduto, String nmProduto, float preco, int qtdProduto){
+        boolean validate = false;
+        if (idProduto.equals("")){
+            return constants.idInvalido;
+        }
+
+        if (nmProduto.equals("")){
+            return constants.nomeInvalido;
+        }
+
+        if (preco < 1){
+            return constants.precoInvalido;
+        }
+
+        if (qtdProduto < 1){
+            return constants.qtdInvalida;
+        }
+
+        return constants.produtoValidado;
+    }
+
+    public int indiceProduto(String nmProduto){
+        for(int i=0; i<produtos.size(); i++){
+            if(produtos.get(i).getNome().equals(nmProduto)){
+                return i;
+            }
+        }
+        return -1;
     }
 
     //Metodo para retornar os dados da compra
-    public String getDados(){
-        return ("\nID: "+getIdProduto()+"\nNome: "+getNome()+"\nPreco: R$"+getPreco()+ "\nQuantidade: "+getQtdProduto());
+    public String getDados(produto p){
+        return ("\nID: "+p.getIdProduto()+"\nNome: "+p.getNome()+"\nPreco: R$"+p.getPreco()+ "\nQuantidade: "+p.getQtdProduto());
+    }
+
+    public String verificaProduto(int indice, int qtdProduto){
+       if (indice < 0) {
+            return constants.produtoNaoEncontrado;
+        }else{
+            if(produtos.get(indice).getQtdProduto() < 1){
+                return constants.produtoEsgotado;
+            }else{
+                if(produtos.get(indice).getQtdProduto() < qtdProduto){
+                    return ("Apenas "+produtos.get(indice).getQtdProduto()+" disponiveis");
+                }
+            }
+        }
+        return (constants.verificado);
     }
 
     //Metodo criado pelo proprio java, ignorar.

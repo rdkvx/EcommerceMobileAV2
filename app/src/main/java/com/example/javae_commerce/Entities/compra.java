@@ -1,11 +1,11 @@
 package com.example.javae_commerce.Entities;
 
-import java.io.Serializable;
 import java.util.ArrayList;
 
 
-public class compra extends produto implements Serializable{
-
+public class compra {
+    public produto pdt;
+    public boolean envio;
 
     //construtor padrão
     public compra(){
@@ -18,12 +18,14 @@ public class compra extends produto implements Serializable{
 
         for(int i = 0; i < compras.size(); i++){
             if(compras.get(i).getEnvio() == false){
-                enviados.add(""+compras.get(i).getNome()+": ENVIO PENDENTE");
+                enviados.add(""+compras.get(i).pdt.getNome()+": ENVIO PENDENTE");
             }else{
-                enviados.add(""+compras.get(i).getNome()+": ENVIO REALIZADO");
+                enviados.add(""+compras.get(i).pdt.getNome()+": ENVIO REALIZADO");
             }
         }
         return enviados;
     }
+
+
 
 }

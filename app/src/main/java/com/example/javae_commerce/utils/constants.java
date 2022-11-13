@@ -18,8 +18,13 @@ public class constants {
     public static final String idInvalido = "ID INVALIDO";
     public static final String precoInvalido = "PRECO INVALIDO";
     public static final String qtdInvalida = "QUANTIDADE INVALIDA";
-    public static final String erroAoRemoverProduto = "PRODUTO NAO ENCONTRADO";
+    public static final String produtoNaoEncontrado = "PRODUTO NAO ENCONTRADO";
     public static final String produtoMenu = "PRODUTOS";
     public static final String produtoRemovido = "PRODUTO REMOVIDO";
+    public static final String produtoEsgotado = "PRODUTO ESGOTADO";
+    public static final String compraEfetuada = "COMPRA EFETUADA! VERIFIQUE O MENU DE ENVIOS";
+    public static final String erroAoComprar = "ERRO AO EFETUAR COMPRA";
+    public static final String compraMenu = "COMPRA";
+    public static final String verificado = "VERIFICADO";
 
 }

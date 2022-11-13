@@ -38,20 +38,20 @@ public class vendaServices {
     }
 
     //Function para verificar quais os produtos já foram vendidos e o total do valor arrecadado.
-    public String relatorioVendas(ArrayList<com.example.javae_commerce.Entities.venda> produtos){
+  /*  public String relatorioVendas(ArrayList<com.example.javae_commerce.Entities.venda> produtos){
         float total = 0;
         for(int i = 0; i<produtos.size(); i++){
             total = total + (produtos.get(i).getPreco());
         }
         return "TOTAL DE VENDAS: R$"+total;
-    }
+    }*/
 
     //Método para cadastrar produtos
-    public String cadastroProduto(com.example.javae_commerce.Entities.produto produto , ArrayList<com.example.javae_commerce.Entities.venda> vendas,  ArrayList<com.example.javae_commerce.Entities.venda> produtos) throws IOException{
+   /* public String cadastroProduto(com.example.javae_commerce.Entities.produto produto , ArrayList<com.example.javae_commerce.Entities.venda> vendas,  ArrayList<com.example.javae_commerce.Entities.venda> produtos) throws IOException{
         com.example.javae_commerce.Entities.venda vnd = new com.example.javae_commerce.Entities.venda();
 
         //METODO PARA VERIFICAR SE O PRODUTO JÁ ESTÁ CADASTRADO OU NÃO
-        int indicevnd1 = vnd.verificaProduto(produtos, produto.getNome());
+        int indicevnd1 = vnd.pdt.verificaProduto(produtos, produto.getNome());
 
         //CASO O METODO RETORNE -1, O PRODUTO BUSCADO NÃO FOI CADASTRADO
         if(indicevnd1 == -1){
@@ -77,5 +77,5 @@ public class vendaServices {
             return ("INFELIZMENTE NÃO TEMOS A QUANTIDADE SOLICITADA.");
         }
         return "COMPRA REALIZADA COM SUCESSO";
-    }
+    }*/
 }

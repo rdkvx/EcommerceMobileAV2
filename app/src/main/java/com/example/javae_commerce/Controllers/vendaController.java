@@ -1,15 +1,11 @@
 package com.example.javae_commerce.Controllers;
 
-import java.io.IOException;
-import java.util.ArrayList;
-
-
 /**
  *
  * @author digof
  */
 public class vendaController {
-    public String efetuaVendaController(String nmProduto, int qtdProduto, ArrayList<com.example.javae_commerce.Entities.venda> vendas, ArrayList<com.example.javae_commerce.Entities.venda> produtos) throws IOException{
+   /* public String efetuaVendaController(String nmProduto, int qtdProduto, ArrayList<com.example.javae_commerce.Entities.venda> vendas, ArrayList<com.example.javae_commerce.Entities.venda> produtos) throws IOException{
 
         com.example.javae_commerce.Entities.produto produto = new com.example.javae_commerce.Entities.produto();
         com.example.javae_commerce.Services.vendaServices vndService = new com.example.javae_commerce.Services.vendaServices();
@@ -43,9 +39,9 @@ public class vendaController {
     public ArrayList<String> listaProdutos(ArrayList<com.example.javae_commerce.Entities.venda> produtos){
         ArrayList<String> produtosDisponiveis = new ArrayList<String>();
         for(int i=0; i< produtos.size(); i++){
-            produtosDisponiveis.add(""+produtos.get(i).getDados());
+            produtosDisponiveis.add(""+produtos.get(i).pdt.getDados());
         }
 
         return produtosDisponiveis;
-    }
+    }*/
 }

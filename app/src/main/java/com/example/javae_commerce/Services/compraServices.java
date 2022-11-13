@@ -1,10 +1,12 @@
 package com.example.javae_commerce.Services;
 
-import com.example.javae_commerce.Entities.compra;
+import static com.example.javae_commerce.MainActivity.produtos;
+import static com.example.javae_commerce.MainActivity.vendas;
+
 import com.example.javae_commerce.Entities.produto;
 import com.example.javae_commerce.Entities.venda;
 
-import java.util.ArrayList;
+import java.util.MissingFormatArgumentException;
 
 /**
  *
@@ -12,32 +14,28 @@ import java.util.ArrayList;
  */
 public class compraServices {
     // metodo retorna uma compra para ser adicionada na lista de vendas
-    public venda comprar(ArrayList<venda> produtos,String nmProduto, int qtdProduto){
+    public boolean comprar(int indice, int qtdProduto){
         venda vendaNova = new venda();
+        produto p = new produto();
+       try{
+           produtos.get(indice).setQtdProduto(produtos.get(indice).getQtdProduto() - qtdProduto);
 
+           p.setIdProduto(produtos.get(indice).getIdProduto());
+           p.setNome(produtos.get(indice).getNome());
+           p.setPreco(produtos.get(indice).getPreco()*qtdProduto);
+           p.setQtdProduto(qtdProduto);
+           vendaNova.pdt = p;
+           vendaNova.setEnvio(false);
 
-        int indiceVnd1 = vendaNova.verificaProduto(produtos, nmProduto);
-        if (indiceVnd1 == -1){
-            return vendaNova;
-        }
-        if (qtdProduto <= 0){
-            return vendaNova;
-        }
-        if(produtos.get(indiceVnd1).getQtdProduto() >= qtdProduto && qtdProduto >0){
-            produtos.get(indiceVnd1).setQtdProduto(produtos.get(indiceVnd1).getQtdProduto() - qtdProduto);
+           vendas.add(vendaNova);
+           return true;
 
-            vendaNova.setIdProduto(produtos.get(indiceVnd1).getIdProduto());
-            vendaNova.setNome(produtos.get(indiceVnd1).getNome());
-            vendaNova.setPreco(produtos.get(indiceVnd1).getPreco()*qtdProduto);
-            vendaNova.setQtdProduto(qtdProduto);
-
-            return vendaNova;
-        }
-
-        return vendaNova;
+       }catch (MissingFormatArgumentException e){
+            return false;
+       }
     }
 
-    // retorna um array com os status de envio das compras
+    /*// retorna um array com os status de envio das compras
     public ArrayList<String> verificaEnvio(ArrayList<com.example.javae_commerce.Entities.venda> vendas){
         compra cpra = new compra();
         return cpra.verificaEnvio(vendas);
@@ -52,6 +50,6 @@ public class compraServices {
         }
 
         return listaProduto;
-    }
+    }*/
 
 }

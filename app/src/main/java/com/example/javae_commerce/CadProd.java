@@ -1,6 +1,6 @@
 package com.example.javae_commerce;
 
-import static com.example.javae_commerce.MainActivity.vendas;
+import static com.example.javae_commerce.MainActivity.produtos;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,7 +11,7 @@ import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.javae_commerce.Entities.venda;
+import com.example.javae_commerce.Entities.produto;
 import com.example.javae_commerce.utils.constants;
 import com.example.javae_commerce.utils.misc;
 
@@ -59,19 +59,19 @@ public class CadProd extends AppCompatActivity {
     }
 
     private void btnCadastraProduto(String idProduto, String nmProduto, float preco, int qtdProduto){
-        venda v = new venda();
+        produto p = new produto();
 
-       String response = v.validaProduto(idProduto, nmProduto, preco, qtdProduto);
+       String response = p.validaProduto(idProduto, nmProduto, preco, qtdProduto);
 
        if(response != constants.produtoValidado){
            misc.msgAlert(btnCadProduto.getContext(), response, constants.cadastroProduto);
        } else {
-           v.setIdProduto(idProduto);
-           v.setNome(nmProduto);
-           v.setPreco(preco);
-           v.setQtdProduto(qtdProduto);
+           p.setIdProduto(idProduto);
+           p.setNome(nmProduto);
+           p.setPreco(preco);
+           p.setQtdProduto(qtdProduto);
 
-           vendas.add(v);
+           produtos.add(p);
            misc.msgAlert(btnCadProduto.getContext(), constants.produtoCadastrado, constants.cadastroProduto);
 
            Handler handler = new Handler();
