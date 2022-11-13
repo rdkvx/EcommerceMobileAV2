@@ -1,13 +1,9 @@
 package com.example.javae_commerce.Entities;
 
-import com.example.javae_commerce.Services.utilidades;
+import com.example.javae_commerce.utils.constants;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
-import java.util.Scanner;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 
 /**
@@ -54,31 +50,19 @@ public class funcionario implements pessoa {
 
     //método vindo da interface pessoa, utilizada para cadastrar novos funcionarios
     @Override
-    public void cadastroFuncionario(){
-        Scanner input = new Scanner(System.in);
-        utilidades utils = new utilidades();
-        utils.limpatela();
-        System.out.println("CADASTRO DE FUNCIONARIOS\n\n");
-
+    public String validaFuncionario(String nome, String email){
         try {
-            System.out.print("INFORME SEU EMAIL: ");
-            setEmail(input.nextLine());
-            if(!getEmail().contains("@")){
-                System.out.println("INFORME UM EMAIL VALIDO!");
-                System.in.read();
+            if(!email.contains("@") || email.length() < 1){
+                return constants.emailInvalido;
             }
-            else{
-                System.out.print("INFORME SEU NOME: ");
-                setNome(input.nextLine());
+
+            if(nome.length() <1 ){
+                return constants.nomeInvalido;
             }
 
         } catch (InputMismatchException e) {
-            System.out.print("TIPO DE DADO INVALIDO");
-
-        } catch (IOException ex) {
-            Logger.getLogger(funcionario.class.getName()).log(Level.SEVERE, null, ex);
+           return constants.dadosInvalidos;
         }
-
+      return constants.cadastroValidado;
     }
-
 }

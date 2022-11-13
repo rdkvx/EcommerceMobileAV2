@@ -8,52 +8,61 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        android:layout_width="215dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="100dp"
-        android:layout_marginBottom="120dp"
+        android:id="@+id/nomeDoSistema"
+        android:layout_width="214dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="117dp"
         android:text="@string/seu_e_commerce"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/btnVendedor"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
-    <Button
-        android:id="@+id/btnComprador"
-        android:layout_width="237dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="283dp"
-        android:text="@string/comprador"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnVendedor" />
-
-    <Button
-        android:id="@+id/btnVendedor"
-        android:layout_width="237dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="72dp"
-        android:text="@string/vendedor"
-        app:layout_constraintBottom_toTopOf="@+id/btnComprador"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="28dp"
         android:layout_height="32dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="17dp"
+        android:layout_marginEnd="15dp"
         android:layout_marginBottom="123dp"
         android:text="@string/v1_0"
         android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/btnComprador" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnVendedor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="@string/vendedor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnComprador" />
+
+    <Button
+        android:id="@+id/btnComprador"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="92dp"
+        android:text="@string/comprador"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nomeDoSistema" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
