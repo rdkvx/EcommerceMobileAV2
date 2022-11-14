@@ -69,35 +69,4 @@ public class venda {
     public String getDadosVenda(venda v){
         return ("\nID: "+v.pdt.getIdProduto()+"\nNome: "+v.pdt.getNome()+"\nPreco: R$"+v.pdt.getPreco()+ "\nQuantidade: "+v.pdt.getQtdProduto());
     }
-
-
-
-    //Método para verificar quais os produtos já foram vendidos e o total do valor arrecadado.
-   /* public void relatorioVendas(ArrayList<venda> produtos){
-        float total = 0;
-        for(int i = 0; i<produtos.size(); i++){
-            System.out.println(""+produtos.get(i).getDadosVendas());
-            total = total + (produtos.get(i).getPreco());
-        }
-        System.out.println("\nTOTAL DE VENDAS: R$"+total);
-    }*/
-
-
-
-
-
-    //Metodo para verificar se o produto está cadastrado na base, buscando pelo indice.
-   /* public int getIndice(ArrayList<venda> produtos, String id){
-        for(int i = 0; i < produtos.size(); i++){
-            if(produtos.get(i).getIdProduto().equals(id)){
-                return i;
-            }
-        }
-        return -1;
-    }*/
-
-    //Metodo para retornar os dados totais de venda
-    /*public String getDadosVendas(){
-        return ("\nID: "+getIdProduto()+"\nNOME: "+getNome()+"\nQUANTIDADE VENDIDA: "+getQtdProduto()+"\nTOTAL: R$"+getPreco());
-    }*/
 }

@@ -54,6 +54,7 @@ public class compraServices {
         return listaPronta;
     }
 
+    // retorna um array com os envios realizados
     public String[] verificaEnvioRealizado(){
         ArrayList<String> enviosRealizados = new ArrayList<String>();
 

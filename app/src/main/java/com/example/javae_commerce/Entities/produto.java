@@ -65,13 +65,21 @@ public class produto implements Serializable{
 
     //Método para cadastrar produtos
     public String validaProduto(String idProduto, String nmProduto, float preco, int qtdProduto){
-        boolean validate = false;
         if (idProduto.equals("")){
             return constants.idInvalido;
         }
 
         if (nmProduto.equals("")){
             return constants.nomeInvalido;
+        }
+
+        for(int i = 0; i < produtos.size(); i++){
+            if(idProduto.equals(produtos.get(i).idProduto)){
+                return constants.ErroIdCadastrado;
+            }
+            if(nmProduto.equals(produtos.get(i).nome)){
+                return constants.ErroNomeCadastrado;
+            }
         }
 
         if (preco < 1){
@@ -106,24 +114,11 @@ public class produto implements Serializable{
             if(produtos.get(indice).getQtdProduto() < 1){
                 return constants.produtoEsgotado;
             }else{
-                if(produtos.get(indice).getQtdProduto() < qtdProduto){
+                if(produtos.get(indice).getQtdProduto() < qtdProduto || qtdProduto < 1){
                     return ("Apenas "+produtos.get(indice).getQtdProduto()+" disponiveis");
                 }
             }
         }
         return (constants.verificado);
     }
-
-    //Metodo criado pelo proprio java, ignorar.
-    public void envio(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    //Metodo para ser sobrescrito pelas classes filhas.
-    public void trataEnvio(){
-
-    }
-
-
-
 }
