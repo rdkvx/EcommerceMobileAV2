@@ -26,5 +26,6 @@ public class constants {
     public static final String erroAoComprar = "ERRO AO EFETUAR COMPRA";
     public static final String compraMenu = "COMPRA";
     public static final String verificado = "VERIFICADO";
+    public static final String vendaZerada = "NENHUMA VENDA EFETUADA";
 
 }

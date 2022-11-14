@@ -6,6 +6,7 @@ import static com.example.javae_commerce.MainActivity.vendas;
 import com.example.javae_commerce.Entities.produto;
 import com.example.javae_commerce.Entities.venda;
 
+import java.util.ArrayList;
 import java.util.MissingFormatArgumentException;
 
 /**
@@ -39,17 +40,24 @@ public class compraServices {
     public ArrayList<String> verificaEnvio(ArrayList<com.example.javae_commerce.Entities.venda> vendas){
         compra cpra = new compra();
         return cpra.verificaEnvio(vendas);
-    }
+    }*/
 
     // retorna um array com as informacoes de todos os produtos
-    public ArrayList<String> listaProdutos(ArrayList<produto> produtos){
+    public String[] listaProdutos(){
         ArrayList<String> listaProduto = new ArrayList<String>();
 
-        for(int i=0; i< produtos.size(); i++){
-            listaProduto.add(""+produtos.get(i).getDados());
+        int i;
+
+        for(i=0; i< produtos.size(); i++){
+            listaProduto.add(""+produtos.get(i).getDados(produtos.get(i)));
         }
 
-        return listaProduto;
-    }*/
+        String listaPronta[] = new String[i];
+
+        for(i=0; i<listaProduto.size(); i++){
+            listaPronta[i] = listaProduto.get(i);
+        }
+        return listaPronta;
+    }
 
 }

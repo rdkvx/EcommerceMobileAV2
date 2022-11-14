@@ -4,7 +4,6 @@ import static com.example.javae_commerce.MainActivity.funcionarios;
 
 import com.example.javae_commerce.utils.constants;
 
-import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 
@@ -38,16 +37,6 @@ public class funcionario implements pessoa {
     //Construtor padrão
     public funcionario(){
 
-    }
-
-    //método para auxiliar na validação do cadastro do funcionário.
-    public int getindiceFuncionario(ArrayList<funcionario> funcionarios, String email){
-        for(int i = 0; i < funcionarios.size(); i++){
-            if(funcionarios.get(i).getEmail().equals(email)){
-                return i;
-            }
-        }
-        return -1;
     }
 
     //método vindo da interface pessoa, utilizada para cadastrar novos funcionarios

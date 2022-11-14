@@ -20,7 +20,6 @@ public class Produtos extends AppCompatActivity {
 
         btnMenuNovoProduto = (Button) findViewById(R.id.btnMenuNovoProduto);
         btnMenuRemoveProduto = (Button) findViewById(R.id.btnMenuRemoveProduto);
-        btnMenuPdtsEnvioPendente = (Button) findViewById(R.id.btnMenuPdtsEnvioPendente);
         btnHome = (Button) findViewById(R.id.btnHome);
 
 
@@ -37,14 +36,6 @@ public class Produtos extends AppCompatActivity {
             public void onClick(View v) {
 
                 btnMenuRemoveProdutoActivity();
-            }
-        });
-
-        btnMenuPdtsEnvioPendente.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                btnMenuPdtsEnvioPendenteActivity();
             }
         });
 
@@ -65,11 +56,6 @@ public class Produtos extends AppCompatActivity {
     private void btnMenuRemoveProdutoActivity() {
 
         startActivity(new Intent(Produtos.this, RemovProd.class));
-    }
-
-    private void btnMenuPdtsEnvioPendenteActivity() {
-
-        startActivity(new Intent(Produtos.this, Envios.class));
     }
 
     private void btnHomeActivity() {

@@ -16,8 +16,6 @@ public class venda {
         return envio;
     }
 
-    com.example.javae_commerce.Services.utilidades utils = new com.example.javae_commerce.Services.utilidades();
-
     //Construtor padrão
     public venda(){
 
@@ -27,11 +25,15 @@ public class venda {
     public ArrayList<venda> trataEnvio(){
         ArrayList<venda> enviosPendentes = new ArrayList<venda>();
         for(int i = 0; i < vendas.size(); i++){
-            if(vendas.get(i).getEnvio() == false){
+            if(!vendas.get(i).getEnvio()){
                 enviosPendentes.add(vendas.get(i));
             }
         }
         return enviosPendentes;
+    }
+
+    public String getDadosVenda(venda v){
+        return ("\nID: "+v.pdt.getIdProduto()+"\nNome: "+v.pdt.getNome()+"\nPreco: R$"+v.pdt.getPreco()+ "\nQuantidade: "+v.pdt.getQtdProduto());
     }
 
 
