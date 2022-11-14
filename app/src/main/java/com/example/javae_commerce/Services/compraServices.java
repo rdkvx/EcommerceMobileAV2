@@ -36,12 +36,6 @@ public class compraServices {
        }
     }
 
-    /*// retorna um array com os status de envio das compras
-    public ArrayList<String> verificaEnvio(ArrayList<com.example.javae_commerce.Entities.venda> vendas){
-        compra cpra = new compra();
-        return cpra.verificaEnvio(vendas);
-    }*/
-
     // retorna um array com as informacoes de todos os produtos
     public String[] listaProdutos(){
         ArrayList<String> listaProduto = new ArrayList<String>();

@@ -21,6 +21,8 @@ public class VendEfet extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_vend_efet);
 
+        infoPainelVendas = findViewById(R.id.infoPainelVendas);
+
         if(vendas.size() < 1){
             infoPainelVendas.setText(constants.vendaZerada);
         }else{
@@ -28,8 +30,6 @@ public class VendEfet extends AppCompatActivity {
             vendaServices vs = new vendaServices();
 
             lista = vs.listaVendas();
-
-            infoPainelVendas = findViewById(R.id.infoPainelVendas);
 
             infoPainelVendas.setText(Arrays.toString(lista).replaceAll("\\[|\\]", ""));
         }

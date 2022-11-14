@@ -22,14 +22,48 @@ public class venda {
     }
 
     //Método para enviar o produto, utilizado no menu de VENDAS, sobrescrevendo o da classe mae.
-    public ArrayList<venda> trataEnvio(){
-        ArrayList<venda> enviosPendentes = new ArrayList<venda>();
-        for(int i = 0; i < vendas.size(); i++){
+    public String[] verificaEnvioPendente(){
+        ArrayList<String> enviosPendentes = new ArrayList<String>();
+
+        int i;
+
+        boolean found = false;
+
+        for(i = 0; i < vendas.size(); i++){
             if(!vendas.get(i).getEnvio()){
-                enviosPendentes.add(vendas.get(i));
+                enviosPendentes.add(""+vendas.get(i).getDadosVenda(vendas.get(i)));
+                found = true;
             }
         }
-        return enviosPendentes;
+
+        if (found){
+            String pendentes[] = new String[i];
+
+            for(i=0; i < enviosPendentes.size(); i++){
+                pendentes[i] = enviosPendentes.get(i);
+            }
+            return pendentes;
+        }
+
+        String pendentes[] = new String[0];
+        return  pendentes;
+    }
+
+    public Boolean trataEnvio(){
+        boolean found = false;
+
+        if(vendas.size() > 0){
+            for(int i = 0; i < vendas.size(); i++){
+                if(!vendas.get(i).getEnvio()){
+                    vendas.get(i).setEnvio(true);
+                    found = true;
+                }
+            }
+        }
+        if(found){
+            return true;
+        }
+        return false;
     }
 
     public String getDadosVenda(venda v){

@@ -27,5 +27,12 @@ public class constants {
     public static final String compraMenu = "COMPRA";
     public static final String verificado = "VERIFICADO";
     public static final String vendaZerada = "NENHUMA VENDA EFETUADA";
+    public static final String falhaAoEnviar = "FALHA AO REALIZAR ENVIO";
+    public static final String envioRealizado = "ENVIO REALIZADO";
+    public static final String menuEnvioVendedor = "ENVIO VENDEDOR";
+    public static final String vazio = "";
+    public static final String semProdutosPendentes = "SEM PRODUTOS PENDENTE DE ENVIO";
+
 
 }
+
