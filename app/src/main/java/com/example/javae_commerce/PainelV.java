@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class PainelV extends AppCompatActivity {
 
-    private Button btnCadProd, btnChecarProduto, btnVendasEfetuadas;
+    private Button btnCadProd, btnChecarProduto, btnVendasEfetuadas, btnInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,9 +19,14 @@ public class PainelV extends AppCompatActivity {
         btnChecarProduto = (Button) findViewById(R.id.btnChecarProduto);
         btnCadProd = (Button) findViewById(R.id.btnCadProd);
         btnVendasEfetuadas = (Button) findViewById(R.id.btnVendasEfetuadas);
+        btnInicio = (Button) findViewById(R.id.btnInicio);
 
-
-
+        btnInicio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                btnInicioActivity();
+            }
+        });
 
         btnCadProd.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,6 +54,11 @@ public class PainelV extends AppCompatActivity {
             }
         });
 
+    }
+
+    private void btnInicioActivity() {
+
+        startActivity(new Intent(PainelV.this, MainActivity.class));
     }
 
     private void btnVendasEfetuadasActivity() {

@@ -54,4 +54,31 @@ public class compraServices {
         return listaPronta;
     }
 
+    public String[] verificaEnvioRealizado(){
+        ArrayList<String> enviosRealizados = new ArrayList<String>();
+
+        int i;
+
+        boolean found = false;
+
+        for(i = 0; i < vendas.size(); i++){
+            if(vendas.get(i).getEnvio()){
+                enviosRealizados.add(""+vendas.get(i).getDadosVenda(vendas.get(i)));
+                found = true;
+            }
+        }
+
+        if (found){
+            String enviados[] = new String[i];
+
+            for(i=0; i < enviosRealizados.size(); i++){
+                enviados[i] = enviosRealizados.get(i);
+            }
+            return enviados;
+        }
+
+        String enviados[] = new String[0];
+        return  enviados;
+    }
+
 }
